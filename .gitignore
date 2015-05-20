@@ -16,3 +16,6 @@
 /tmp
 
 /vendor
+
+/public/system/*
+.zeus.sock

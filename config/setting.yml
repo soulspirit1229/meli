@@ -1,0 +1,13 @@
+defaults: &defaults
+  site_name: 'Meli'
+  heading: 'Meli - The road to the greatest'
+  sub_heading: 'Lets go'
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

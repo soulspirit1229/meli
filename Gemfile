@@ -1,32 +1,20 @@
-if ENV[CI]
+if ENV['CI']
   source 'http://ruby.taobao.org'
 else
   source 'https://rubygems.org'
+end
 
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.9'
-# Use sqlite3 as the database for Active Record
 gem 'sqlite3'
-# Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
-# Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-# Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer',  platforms: :ruby
-
-# Use jquery as the JavaScript library
+# gem 'therubyracer',  platforms: :ruby # Embed V8 Javascript interpreter into ruby
 gem 'jquery-rails'
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
-# bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
-
-# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
 # Use ActiveModel has_secure_password
@@ -40,12 +28,55 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
+gem 'figaro' # Simple, Heroku-friendly Rails app configuration using ENV and a single YAML file
+gem 'simple_form'
+gem 'slim'
+gem 'settingslogic'
 gem 'cancancan'
+#gem 'compass-rails'
+gem 'devise'
+gem 'devise_invitable'
+
+gem 'rolify' # role management
+
+# for upload picture
+gem 'mini_magick'
+gem 'carrierwave'
+
+gem "foundation-rails", ">= 5.0"
+gem 'foundation-icons-sass-rails'
+
+
+# For sns login
+gem 'omniauth-weibo-oauth2'
+gem 'weibo2'
+gem 'oauth'
+gem 'oauth_china'
 
 group :development do
   # Better debugging
   gem "better_errors"
   gem "binding_of_caller"
   gem "meta_request"
+  gem 'haml-rails'
+  gem 'haml2slim'
+  gem 'html2haml'
+  gem 'quiet_assets'
+  gem 'rails_layout'
+
+  gem 'guard'
+  gem 'guard-rspec', require: false
+  gem 'guard-livereload', require: false
+end
+
+group :development, :test do
+  gem 'pry-byebug'
+
+  gem 'factory_girl_rails'
+  gem 'rspec-rails'
+end
+
+group :test do
+  gem 'database_cleaner'
+  gem 'rspec-sidekiq'
 end
